@@ -9,8 +9,8 @@
 
 html, body {
   height: 100%;
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: var(--bg);
+  color: var(--text);
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,9 +33,9 @@ html, body {
   position: sticky;
   top: 0;
   width: 100%;
-  background: var(--color-primary);
+  background: var(--bg-dark);
   padding: 0.6rem 0;
-  border-bottom: 1px solid var(--color-secondary);
+  border-bottom: 1px solid var(--border);
   z-index: 1000;
   backdrop-filter: saturate(110%) blur(6px);
 }
@@ -58,7 +58,7 @@ html, body {
 }
 
 .nav-left a {
-  color: var(--color-dark);
+  color: var(--text);
   text-decoration: none;
   font-weight: 500;
   padding: 0.35rem 0.5rem;
@@ -74,7 +74,7 @@ html, body {
 
 /* Ensure nav link colors respond to dark mode */
 .dark-mode .nav-left a {
-  color: var(--color-dark);
+  color: var(--text);
 }
 
 /* ===== Theme Toggle (pill + thumb + icons) ===== */
@@ -93,7 +93,7 @@ html, body {
 .toggle-track {
   width: 48px;
   height: 24px;
-  background: var(--color-secondary);
+  background: var(--primary);
   border-radius: 999px;
   position: relative;
   padding: 2px;
@@ -105,7 +105,7 @@ html, body {
 .toggle-thumb {
   width: 20px;
   height: 20px;
-  background: var(--color-bg);
+  background: var(--bg);
   border-radius: 50%;
   position: absolute;
   left: 2px;
@@ -134,7 +134,7 @@ html, body {
   transform: translate(-50%, -50%);
   transition: opacity 0.20s ease, stroke 0.22s ease, fill 0.22s ease;
   fill: none;
-  stroke: var(--color-dark);
+  stroke: var(--text);
 }
 
 /* Default: show sun, hide moon */
@@ -158,12 +158,12 @@ html, body {
 
 /* Make sure svg strokes invert in dark mode when needed */
 .dark-mode .toggle-thumb svg {
-  stroke: var(--color-bg);
+  stroke: var(--text);
 }
 
 /* Slightly change track color in dark mode */
 .dark-mode .toggle-track {
-  background: rgba(255,255,255,0.08);
+  background: var(--primary);
 }
 
 /* Hover states */
@@ -176,7 +176,7 @@ html, body {
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  background: var(--color-primary);
+  background: var(--bg-light);
   padding: 1.75rem;
   border-radius: var(--radius-lg);
   box-shadow: 0 6px 20px rgba(20,30,45,0.04);
@@ -189,17 +189,17 @@ html, body {
   height: 140px;
   object-fit: cover;
   border-radius: 10px;
-  border: 3px solid var(--color-secondary);
+  /*border: 3px solid var(--border-muted);*/
 }
 
 .intro-text h1 {
   font-size: 1.6rem;
   margin-bottom: 0.4rem;
-  color: var(--color-dark);
+  color: var(--text);
 }
 
 .intro-text p {
-  color: var(--color-text);
+  color: var(--text-muted);
   max-width: 55ch;
 }
 
@@ -212,8 +212,8 @@ html, body {
 }
 
 .card {
-  background: var(--color-bg);
-  border: 1px solid var(--color-secondary);
+  background: var(--bg-dark);
+  border: 1px solid var(--border-muted);
   border-radius: var(--radius-lg);
   padding: 1.25rem;
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
@@ -222,22 +222,22 @@ html, body {
 .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 30px rgba(12,20,35,0.06);
-  border-color: var(--color-accent);
+  border-color: var(--highlight);
 }
 
 .card h3 {
   margin-bottom: 0.45rem;
-  color: var(--color-dark);
+  color: var(--text);
 }
 
 .card p {
   margin-bottom: 0.9rem;
-  color: var(--color-text);
+  color: var(--text-muted);
   font-size: 0.95rem;
 }
 
 .card a {
-  color: var(--color-accent);
+  color: var(--secondary);
   font-weight: 600;
   text-decoration: none;
 }
@@ -252,27 +252,27 @@ html, body {
 /* ===== Footer ===== */
 .footer {
   width: 100%;
-  background: var(--color-primary);
+  background: var(--bg-dark);
   padding: 1rem;
   text-align: center;
-  border-top: 1px solid var(--color-secondary);
+  border-top: 1px solid var(--border-muted);
   margin-top: 2.5rem;
   transition: background 0.25s ease;
   position: relative;
 }
 
 .footer p {
-  color: var(--color-dark);
+  color: var(--text-muted);
 }
 
 .footer a {
   margin-left: 0.8rem;
-  color: var(--color-accent);
+  color: var(--primary);
   text-decoration: none;
   font-weight: 500;
 }
 
-/* Turtle now rests on the footer */
+/* Turtle rests on the footer */
 .turtle {
   position: absolute;
   bottom: 100%;       /* positions turtle ABOVE the footer */
@@ -322,15 +322,15 @@ html, body {
 
 
 .nav-left a.active {
-  background: var(--color-accent);
-  color: var(--color-bg) !important;
+  background: var(--bg);
+  color: var(--text) !important;
   font-weight: 600;
   border-radius: 6px;
 }
 
 .dark-mode .nav-left a.active {
-  background: var(--color-accent);
-  color: var(--color-bg) !important;
+  background: var(--color---b);
+  color: var(--text) !important;
 }
 
 .nav-left a {
@@ -343,7 +343,7 @@ html, body {
 .nav-left .icon {
   width: 16px;
   height: 16px;
-  stroke: var(--color-dark);
+  stroke: var(--text);
   fill: none;
   stroke-width: 1.8;
   transition: stroke 0.25s ease;
@@ -351,7 +351,7 @@ html, body {
 
 /* Ensure good contrast in dark mode */
 .dark-mode .nav-left .icon {
-  stroke: var(--color-dark);
+  stroke: var(--text);
 }
 
 .no-theme-transition * {
