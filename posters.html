@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="css/vars.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/posters.css">
-    <script>
-    (function() {
+  <script>
+    (function () {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme === 'dark') {
         document.documentElement.classList.add('dark-mode');
@@ -16,6 +16,7 @@
     })();
   </script>
 </head>
+
 <body>
 
 
@@ -24,48 +25,53 @@
   <nav class="navbar">
     <div class="nav-content">
 
-        <div class="nav-left">
-        <a href="index.html"><svg class="icon" viewBox="0 0 24 24"><path d="M3 9.5l9-7 9 7v11.5a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z" /></svg></a>
+      <div class="nav-left">
+        <a href="index.html"><svg class="icon" viewBox="0 0 24 24">
+            <path d="M3 9.5l9-7 9 7v11.5a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z" />
+          </svg>Home</a>
+        <a href="personal.html">Personal</a>
         <a href="projects.html">Projects</a>
         <a href="posters.html" class="active">Posters</a>
         <a href="publications.html">Publications</a>
-        <a href="contact.html"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4V4zm8 7L4 6m16 0l-8 5" /></svg>Contact</a>
-        </div>
-
-
-        <!-- Theme Toggle Switch -->
-        <button class="theme-toggle" aria-label="Toggle Dark Mode">
-          <div class="toggle-track">
-            <div class="toggle-thumb">
-              <!-- Sun Icon -->
-              <svg class="icon-sun" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="4"></line>
-                <line x1="12" y1="20" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"></line>
-                <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="4" y2="12"></line>
-                <line x1="20" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"></line>
-                <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"></line>
-              </svg>
-
-              <!-- Moon Icon -->
-              <svg class="icon-moon" viewBox="0 0 24 24">
-                <path d="M21 12.79A9 9 0 0 1 11.21 3 
-                     7 7 0 1 0 21 12.79z" />
-              </svg>
-            </div>
-          </div>
-        </button>
-
+        <a href="contact.html"><svg class="icon" viewBox="0 0 24 24">
+            <path d="M4 4h16v16H4V4zm8 7L4 6m16 0l-8 5" />
+          </svg>Contact</a>
       </div>
+
+
+      <!-- Theme Toggle Switch -->
+      <button class="theme-toggle" aria-label="Toggle Dark Mode">
+        <div class="toggle-track">
+          <div class="toggle-thumb">
+            <!-- Sun Icon -->
+            <svg class="icon-sun" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="4"></line>
+              <line x1="12" y1="20" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"></line>
+              <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="4" y2="12"></line>
+              <line x1="20" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"></line>
+              <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"></line>
+            </svg>
+
+            <!-- Moon Icon -->
+            <svg class="icon-moon" viewBox="0 0 24 24">
+              <path d="M21 12.79A9 9 0 0 1 11.21 3 
+                     7 7 0 1 0 21 12.79z" />
+            </svg>
+          </div>
+        </div>
+      </button>
+
+    </div>
   </nav>
   <!-- NAVBAR ------------------------------------------------------------------------------------------------------------------>
 
   <main class="page-wrapper">
 
-    <!-- BODY -->
+    <!-- BODY 
 
     <section class="content-long">
       <h2>Poster Gallery</h2>
@@ -73,15 +79,9 @@
         An art-gallery-style exhibition of scientific research.
         Hover over highlighted regions to explore deeper insights.
       </p>
-    </section>
-    
+    </section>-->
 
-<!-- Poster 1 -->
-<section class="poster-row">
-  <div class="poster">
-    <img src="https://via.placeholder.com/600x800?text=Scientific+Poster+01" alt="Poster 1">
-
-    <!-- Hotspots -->
+    <!-- Hotspots 
     <div class="hotspot"
          style="top: 20%; left: 30%; width: 40px; height: 40px;"
          data-info="Key experimental setup showing the neural response pipeline.">
@@ -91,29 +91,191 @@
          style="top: 60%; left: 55%; width: 40px; height: 40px;"
          data-info="Significant result: 42% improvement over baseline.">
     </div>
-  </div>
+    -->
+    <section class="zigzag">
 
-  <div class="info-card">
-    <h2>Neural Dynamics in Visual Processing</h2>
-    <div class="authors">A. Smith · J. Lee · R. Patel</div>
-    <p>
-      This study investigates how layered neural representations evolve
-      during complex visual tasks. Using fMRI and computational modeling,
-      we identify emergent structures that correlate with perception accuracy.
-    </p>
+      <div class="card">
+        <div class="poster">
+          <img class="poster-img" src="images/posters/FB poster.png" alt="Poster 1">
+          <button class="enlarge-btn" aria-label="Enlarge poster">
+            ⤢
+          </button>
+        </div>
 
-    <div class="tags">
-      <span class="tag">Neuroscience</span>
-      <span class="tag">Machine Learning</span>
-      <span class="tag">fMRI</span>
+        <div class="info-card">
+          <a href="https://clin35.ccl.kuleuven.be/" target="_blank">
+            <span class="conference-tag">Presented at <b>CLIN 2025</b></span>
+          </a>
+          <div class="authors"><b>D.Di Scala</b>, D.Vos, EU-FarmBook TNO Team</div>
+          <p>
+            <b>Take-away:</b> We study how knowledge-driven RAG can improve trustworthiness of agricultural AI advice.
+            <br>Part of the EU-FarmBook project.
+          </p>
+
+
+          <span class="paper-tag"><b>
+              <span class="paper-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <path
+                    d="M480 576L192 576C139 576 96 533 96 480L96 160C96 107 139 64 192 64L496 64C522.5 64 544 85.5 544 112L544 400C544 420.9 530.6 438.7 512 445.3L512 512C529.7 512 544 526.3 544 544C544 561.7 529.7 576 512 576L480 576zM192 448C174.3 448 160 462.3 160 480C160 497.7 174.3 512 192 512L448 512L448 448L192 448zM224 216C224 229.3 234.7 240 248 240L424 240C437.3 240 448 229.3 448 216C448 202.7 437.3 192 424 192L248 192C234.7 192 224 202.7 224 216zM248 288C234.7 288 224 298.7 224 312C224 325.3 234.7 336 248 336L424 336C437.3 336 448 325.3 448 312C448 298.7 437.3 288 424 288L248 288z" />
+                </svg>
+              </span>
+              Corresponding Paper (WIP)</b></span>
+        </div>
+      </div>
+      </div>
+
+
+      <div class="card">
+        <div class="poster">
+          <img class="poster-img" src="images/posters/NE poster.png" alt="Poster 1">
+          <button class="enlarge-btn" aria-label="Enlarge poster">
+            ⤢
+          </button>
+        </div>
+
+        <div class="info-card">
+          <a href="https://clin35.ccl.kuleuven.be/" target="_blank">
+            <span class="conference-tag">Presented at <b>CLIN 2025</b></span>
+          </a>
+          <div class="authors"><b>D.Di Scala</b>, R.Bakker, R.Van Drie, M.De Boer</div>
+          <p>
+            <b>Take-away:</b> We study how knowledge-driven RAG can improve trustworthiness of legal AI advice.
+            <br>Part of the Rules as Code project.
+          </p>
+
+
+          <span class="paper-tag"><b>
+              <span class="paper-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <path
+                    d="M480 576L192 576C139 576 96 533 96 480L96 160C96 107 139 64 192 64L496 64C522.5 64 544 85.5 544 112L544 400C544 420.9 530.6 438.7 512 445.3L512 512C529.7 512 544 526.3 544 544C544 561.7 529.7 576 512 576L480 576zM192 448C174.3 448 160 462.3 160 480C160 497.7 174.3 512 192 512L448 512L448 448L192 448zM224 216C224 229.3 234.7 240 248 240L424 240C437.3 240 448 229.3 448 216C448 202.7 437.3 192 424 192L248 192C234.7 192 224 202.7 224 216zM248 288C234.7 288 224 298.7 224 312C224 325.3 234.7 336 248 336L424 336C437.3 336 448 325.3 448 312C448 298.7 437.3 288 424 288L248 288z" />
+                </svg>
+              </span>
+              Corresponding Paper (WIP)</b></span>
+        </div>
+      </div>
+      </div>
+
+      <div class="card">
+        <div class="poster">
+          <img class="poster-img" src="images/posters/VALE poster 3.png" alt="Poster 1">
+          <button class="enlarge-btn" aria-label="Enlarge poster">
+            ⤢
+          </button>
+        </div>
+
+        <div class="info-card">
+
+          <a href="https://vale2025.iiia.csic.es/" target="_blank">
+            <span class="conference-tag">Presented at <b>VALE@ECAI 2025</b></span>
+          </a>
+          <div class="authors"><b>D.Di Scala</b>, M.De Boer, P.Yolum</div>
+          <p>
+            <b>Take-away:</b> We introduce an uncertainty-driven RAG (CERTA) and show hwo it answers more approprately
+            on in QA tasks, answering "I don't know" more often in the right moments.
+            <br>Part of my PhD work.
+          </p>
+
+
+          <span class="paper-tag"><b>
+              <span class="paper-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <path
+                    d="M480 576L192 576C139 576 96 533 96 480L96 160C96 107 139 64 192 64L496 64C522.5 64 544 85.5 544 112L544 400C544 420.9 530.6 438.7 512 445.3L512 512C529.7 512 544 526.3 544 544C544 561.7 529.7 576 512 576L480 576zM192 448C174.3 448 160 462.3 160 480C160 497.7 174.3 512 192 512L448 512L448 448L192 448zM224 216C224 229.3 234.7 240 248 240L424 240C437.3 240 448 229.3 448 216C448 202.7 437.3 192 424 192L248 192C234.7 192 224 202.7 224 216zM248 288C234.7 288 224 298.7 224 312C224 325.3 234.7 336 248 336L424 336C437.3 336 448 325.3 448 312C448 298.7 437.3 288 424 288L248 288z" />
+                </svg>
+              </span>
+              Corresponding Paper (WIP)</b></span>
+        </div>
+      </div>
+      </div>
+
+      <div class="card">
+        <div class="poster">
+          <img class="poster-img" src="images/posters/Poster ECAI.png" alt="Poster 1">
+          <button class="enlarge-btn" aria-label="Enlarge poster">
+            ⤢
+          </button>
+        </div>
+
+        <div class="info-card" a href="https://sites.google.com/view/trust-ai/">
+
+
+          <a href="https://sites.google.com/view/trust-ai/" target="_blank">
+            <span class="conference-tag">
+
+              Presented at <b>TRUST-AI@ECAI2025</b>
+            </span></a>
+          <div class="authors"><b>D.Di Scala</b>, S.Lathouwers, M.Van Bekkum</div>
+          <p>
+            <b>Take-away:</b> We propose that the gap between functional and normative Trustworthy AI should be bridged
+            with a descriptive framework.
+          </p>
+
+          <span class="paper-tag"><b>
+              <span class="paper-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <path
+                    d="M480 576L192 576C139 576 96 533 96 480L96 160C96 107 139 64 192 64L496 64C522.5 64 544 85.5 544 112L544 400C544 420.9 530.6 438.7 512 445.3L512 512C529.7 512 544 526.3 544 544C544 561.7 529.7 576 512 576L480 576zM192 448C174.3 448 160 462.3 160 480C160 497.7 174.3 512 192 512L448 512L448 448L192 448zM224 216C224 229.3 234.7 240 248 240L424 240C437.3 240 448 229.3 448 216C448 202.7 437.3 192 424 192L248 192C234.7 192 224 202.7 224 216zM248 288C234.7 288 224 298.7 224 312C224 325.3 234.7 336 248 336L424 336C437.3 336 448 325.3 448 312C448 298.7 437.3 288 424 288L248 288z" />
+                </svg>
+              </span>
+              Corresponding Paper (WIP)</b></span>
+        </div>
+      </div>
+      </div>
+
+      <div class="card">
+        <div class="poster">
+          <img class="poster-img" src="images/posters/AAMAS Poster.png" alt="Poster 1">
+          <button class="enlarge-btn" aria-label="Enlarge poster">
+            ⤢
+          </button>
+        </div>
+
+        <div class="info-card">
+          <a href="https://aamas2023.soton.ac.uk/" target="_blank"> 
+          <span class="conference-tag">Presented at <b>AAMAS 2023</b></span>
+          </a>
+          <div class="authors"><b>D.Di Scala</b>, P.Yolum</div>
+          <p>
+            <b>Take-away:</b> We introduce PACCART, a framework for privacy protection through multi-agent
+            argumentation.
+          </p>
+
+
+          <span class="paper-tag"><b>
+              <span class="paper-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <path
+                    d="M480 576L192 576C139 576 96 533 96 480L96 160C96 107 139 64 192 64L496 64C522.5 64 544 85.5 544 112L544 400C544 420.9 530.6 438.7 512 445.3L512 512C529.7 512 544 526.3 544 544C544 561.7 529.7 576 512 576L480 576zM192 448C174.3 448 160 462.3 160 480C160 497.7 174.3 512 192 512L448 512L448 448L192 448zM224 216C224 229.3 234.7 240 248 240L424 240C437.3 240 448 229.3 448 216C448 202.7 437.3 192 424 192L248 192C234.7 192 224 202.7 224 216zM248 288C234.7 288 224 298.7 224 312C224 325.3 234.7 336 248 336L424 336C437.3 336 448 325.3 448 312C448 298.7 437.3 288 424 288L248 288z" />
+                </svg>
+              </span>
+              Corresponding Paper (WIP)</b></span>
+        </div>
+      </div>
+      </div>
+
+
+
+    </section>
+
+
+
+    <div id="posterModal" class="modal">
+      <span class="close-btn">&times;</span>
+      <img class="modal-content" id="modalImage" alt="Enlarged poster">
     </div>
-  </div>
-</section>
+    <!--
 
-<!-- Poster 2 (Reversed) -->
+
+
 <section class="poster-row reverse">
   <div class="poster">
-    <img src="https://via.placeholder.com/600x800?text=Scientific+Poster+02" alt="Poster 2">
+    <img class="poster-img" src="images/posters/NE Poster.png" alt="Poster 2">
+
+    <button class="enlarge-btn" aria-label="Enlarge poster">
+      ⤢
+    </button>
 
     <div class="hotspot"
          style="top: 35%; left: 40%; width: 45px; height: 45px;"
@@ -137,10 +299,11 @@
     </div>
   </div>
 </section>
+-->
 
 
 
-  <!-- FOOTER ------------------------------------------------------------------------------------------------------------------>
+    <!-- FOOTER ------------------------------------------------------------------------------------------------------------------>
 
   </main>
 
@@ -148,9 +311,10 @@
     <p>© 2025 Daan Di Scala</p>
     <a href="privacy.html">Privacy Statement</a>
     <div class="content-wrapper">
-    <div class="turtle">
-       <img src="images/Festina.png" alt="Turtle" class="turtle-img">
-    </div></div>
+      <div class="turtle">
+        <img src="images/Festina.png" alt="Turtle" class="turtle-img">
+      </div>
+    </div>
   </footer>
 
 </body>
@@ -163,5 +327,100 @@
   });
 </script>
 
-  <script src="js/darkmode.js"></script>
+<script src="js/darkmode.js"></script>
+
+
+
+
+
+
+
+
+<script>
+  const modal = document.getElementById("posterModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = document.querySelector(".close-btn");
+
+  let activeClone = null;
+  let startRect = null;
+  let endRect = null;
+
+  document.querySelectorAll(".poster-img").forEach(button => {
+    button.addEventListener("click", () => {
+      const img = button;
+      startRect = img.getBoundingClientRect();
+
+      // Prepare modal invisibly
+      modal.style.display = "flex";
+      modal.style.opacity = "0";
+      modalImg.style.visibility = "hidden";
+      modalImg.src = img.src;
+
+      // Wait for image to render
+      modalImg.onload = () => {
+        endRect = modalImg.getBoundingClientRect();
+
+        // Clone original image
+        activeClone = img.cloneNode();
+        activeClone.style.position = "fixed";
+        activeClone.style.top = startRect.top + "px";
+        activeClone.style.left = startRect.left + "px";
+        activeClone.style.width = startRect.width + "px";
+        activeClone.style.height = startRect.height + "px";
+        activeClone.style.transition = "all 0.45s cubic-bezier(0.4, 0, 0.2, 1)";
+        activeClone.style.zIndex = "1000";
+
+        document.body.appendChild(activeClone);
+
+        requestAnimationFrame(() => {
+          modal.style.opacity = "1";
+
+          activeClone.style.top = endRect.top + "px";
+          activeClone.style.left = endRect.left + "px";
+          activeClone.style.width = endRect.width + "px";
+          activeClone.style.height = endRect.height + "px";
+        });
+
+        // Swap clone → real modal image
+        setTimeout(() => {
+          modalImg.style.visibility = "visible";
+          activeClone.style.opacity = "0";
+        }, 450);
+      };
+    });
+  });
+
+  function closeModal() {
+    if (!activeClone) {
+      modal.style.display = "none";
+      return;
+    }
+
+    modalImg.style.visibility = "hidden";
+
+    activeClone.style.opacity = "1";
+    activeClone.style.top = startRect.top + "px";
+    activeClone.style.left = startRect.left + "px";
+    activeClone.style.width = startRect.width + "px";
+    activeClone.style.height = startRect.height + "px";
+
+    modal.style.opacity = "0";
+
+    setTimeout(() => {
+      modal.style.display = "none";
+      activeClone.remove();
+      activeClone = null;
+    }, 450);
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", e => {
+    if (e.target === modal) closeModal();
+  });
+</script>
+
+
+<script src="js/darkmode.js"></script>
+
 </html>

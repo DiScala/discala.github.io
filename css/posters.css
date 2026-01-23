@@ -1,5 +1,4 @@
 :root {
-    --bg: #f5f5f3;
     --paper: #ffffff;
     --ink: #1f1f1f;
     --muted: #6b6b6b;
@@ -10,12 +9,6 @@
   * {
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  }
-
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
   }
 
   header {
@@ -44,12 +37,35 @@
     gap: 6rem;
   }
 
+
+.zigzag {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+/* Put odd items in left column */
+.card:nth-child(odd) {
+  grid-column: 1;
+}
+
+/* Put even items in right column */
+.card:nth-child(even) {
+  grid-column: 2;
+
+  /* THIS creates the diagonal offset */
+  transform: translateY(30%);
+}
+
   /* Gallery Row */
   .poster-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 4rem;
+    
+        filter: none;
+        transition: filter 0.3s ease;
   }
 
   .poster-row.reverse {
@@ -67,14 +83,53 @@
     aspect-ratio: 3 / 4;
     box-shadow: var(--shadow);
     overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .poster:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+
+  }
+
+  .poster:hover .enlarge-btn {
+      background: var(--secondary-light);
   }
 
   .poster img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
+  .enlarge-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  
+    width: 32px;
+    height: 32px;
+  
+    background: var(--secondary);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .enlarge-btn:hover {
+    background: var(--secondary-light);
+  }
+
+  
   /* Hover Hotspots */
   .hotspot {
     position: absolute;
@@ -107,9 +162,11 @@
 
   /* Info Card */
   .info-card {
-    background: var(--paper);
-    padding: 2rem;
+    background: var(--bg-light);
+    padding: 1rem 2rem 1rem 2rem;
     box-shadow: var(--shadow);
+    border-radius: 0 0 32px 32px;
+    overflow: hidden;
   }
 
   .info-card h2 {
@@ -119,7 +176,7 @@
   }
 
   .info-card .authors {
-    color: var(--muted);
+    color: var(--text-muted);
     font-size: 0.9rem;
     margin-bottom: 1rem;
   }
@@ -127,6 +184,7 @@
   .info-card p {
     line-height: 1.6;
     font-size: 0.95rem;
+    margin-bottom: 1rem;
   }
 
   .info-card .tags {
@@ -143,6 +201,102 @@
     padding: 0.3rem 0.6rem;
     border-radius: 999px;
   }
+
+
+  .conference-tag {
+    font-size: 0.8rem;
+    background: var(--secondary);
+    color: var(--bg-light);
+    padding: 0.3rem 0.6rem;
+    margin-bottom: 1rem;
+    border-radius: 999px;   
+      display: table;
+    margin-left:auto;
+      cursor: pointer;   
+      transition: transform 0.3s ease;
+  }
+
+  .conference-tag:hover{
+   
+    transform: scale(1.1);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+
+
+  }
+
+  .info-card a {
+  text-decoration: none;
+   color: var(--bg-light);
+  }
+
+  .paper-tag {
+    font-size: 0.7rem;
+    background: var(--primary);
+    color: var(--bg-light);
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;  
+  }
+
+  .paper-icon svg{
+    width:16px;
+    fill:var(--bg-light);
+    transform: translateY(15%);
+  }
+
+/* Modal */
+.modal {
+        padding-top: 0px;
+        box-sizing: border-box;
+    display: none;
+    position: fixed;
+    z-index: 999;
+  
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    background: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    opacity: 1;
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  body.modal-open {
+    overflow: hidden;
+  }
+  
+
+  body.modal-open .poster-row {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+  }
+  
+  
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    top: 60px;
+    right: 30px;
+  
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+  }
+  
+
+
+
+
+
+
+
+
 
   /* Responsive */
   @media (max-width: 900px) {
