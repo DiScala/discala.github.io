@@ -81,7 +81,7 @@
 .lc-divider {
   width: 2px;
   height: 120px;
-  background: #ddd;
+  background: var(--secondary);
   margin: 0 6px;
 }
 
@@ -253,7 +253,7 @@ fill: var(--secondary-light);
 .pcard-divider {
   width: 2px;
   height: 70px;
-  background: #ddd;
+  background: var(--secondary);
   margin: 0 24px;
 }
 

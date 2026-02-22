@@ -99,7 +99,7 @@
 
 
     <div class="bottom-card">
-      This page has last been updated on 24-01-2026. <br>For a full overview of papers, see Google Scholar:
+      This page has last been updated on 22-02-2026. <br>For a full overview of papers, see Google Scholar:
       <a href="https://scholar.google.nl/citations?user=ZDXlUhQAAAAJ" class="social-icon" target="_blank">
         <svg viewBox="0 0 640 640">
           <path
@@ -128,6 +128,28 @@
   const publications = [
 
   //2025
+          {
+      title: "Trusting AI is dangerous. Not trusting AI, too.",
+      authors: ["D.Di Scala", "F.Bomhof"],
+      simple: "We discuss three necessary efforts towards trustworthy AI: Laws, Labor, and Literacy.",
+      complex: "",
+      year: 2025,
+      citations: 0,
+      keywords: ["Trustworthy AI", "Blog"],
+      link: "https://ai-gedachten.blog/2026/02/01/trusting-ai-is-dangerous-not-trusting-ai-too/",
+      image: "images/papers/turtle.png"
+    },
+    {
+      title: "“I Don't Know” - Towards Appropriate Trust with Certainty-Aware Retrieval Augmented Generation",
+      authors: ["D.Di Scala", "M.De Boer", "P.Yolum"],
+      simple: "",
+      complex: "",
+      year: 2025,
+      citations: 0,
+      keywords: ["Trustworthy AI", "Large Language Models", "Retrieval Augmented Generation"],
+      link: "https://www.sciencedirect.com/science/article/pii/S0885230824000792",
+      image: "images/papers/certa.png"
+    },
     {
       title: "Bridging the AI Trustworthiness Gap between Functions and Norms",
       authors: ["D.Di Scala", "S.Lathouwers", "M.Van Bekkum"],
@@ -156,22 +178,12 @@
       simple: "",
       complex: "",
       year: 2025,
-      citations: 5,
+      citations: 8,
       keywords: ["Recommender Systems", "Large Language Models"],
       link: "https://www.sciencedirect.com/science/article/pii/S0885230824000792",
       image: "images/papers/elicitation.png"
     },
-    {
-      title: "“I Don't Know” - Towards Appropriate Trust with Certainty-Aware Retrieval Augmented Generation",
-      authors: ["D.Di Scala", "M.De Boer", "P.Yolum"],
-      simple: "",
-      complex: "",
-      year: 2025,
-      citations: 0,
-      keywords: ["Trustworthy AI", "Large Language Models", "Retrieval Augmented Generation"],
-      link: "https://www.sciencedirect.com/science/article/pii/S0885230824000792",
-      image: "images/papers/certa.png"
-    },
+    
 
 
 
@@ -182,7 +194,7 @@
       simple: "LLMs can produce ontologies from texts quite well, especially with our step-by-step approach",
       complex: "",
       year: 2024,
-      citations: 19,
+      citations: 22,
       keywords: ["Large Language Models", "Information Extraction", "Ontologies"],
       link: "https://ceur-ws.org/Vol-3874/paper5.pdf",
     },
@@ -271,6 +283,7 @@
     if (params.has("id")) {
       const term = params.get("id");
       keywordInput.value = term.toLowerCase();
+      applyFilters();
     }
   }
 
@@ -340,6 +353,10 @@
       card.innerHTML = ""
 
       if (pub.image) {
+        if (pub.keywords.includes("Blog") ){
+          link_text = "Read Blog"}
+        else{
+        link_text = "Read Paper"}
 
         card.innerHTML += `
         <div class="pub-image">
@@ -349,7 +366,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path d="M19 2H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Zm-1 17H9V4h9v15ZM6 4H5v16h1V4Z"/>
                 </svg> 
-                Read Paper
+                ${link_text}
               </a>
           </div>
         `;
@@ -361,7 +378,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path d="M19 2H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Zm-1 17H9V4h9v15ZM6 4H5v16h1V4Z"/>
                 </svg> 
-                Read Paper
+                ${link_text}
               </a>
         `;
       }
