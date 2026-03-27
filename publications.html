@@ -2,13 +2,33 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Basic -->
+  <meta charset="UTF-8">
   <title>Daan Di Scala - Publications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Academic portfolio site of Daan Di Scala, scientist at TNO and PhD student at Utrecht University, with published papers and presented posters on topics like Trustworthy AI and Hybrid AI.">
+  <meta name="keywords" content="Trustworthy AI, Hybrid AI, Explainable AI, Knowledge">
+  <meta name="author" content="Daan Di Scala">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.daandiscala.nl/publications.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Daan Di Scala - Home">
+  <meta property="og:description" content="Academic portfolio site of Daan Di Scala, scientist at TNO and PhD student at Utrecht University, with published papers and presented posters on topics like Trustworthy AI and Hybrid AI.">
+  <meta property="og:image" content="https://www.daandiscala.nl/images/profile.jpg">
+  <meta property="og:url" content="https://www.daandiscala.nl/publications.html">
+  <meta property="og:type" content="website">
+
+  <!-- Styles -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="css/vars.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/publications.css">
+
+  <!-- Dark Mode Script -->
   <script>
     (function () {
       const savedTheme = localStorage.getItem('theme');
@@ -17,6 +37,7 @@
       }
     })();
   </script>
+
 </head>
 
 <body>
@@ -26,13 +47,13 @@
     <div class="nav-content">
 
       <div class="nav-left">
-        <a href="index.html"><svg class="icon" viewBox="0 0 24 24">
+        <a href="/"><svg class="icon" viewBox="0 0 24 24">
             <path d="M3 9.5l9-7 9 7v11.5a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1V9.5z" />
           </svg>Home</a>
         <a href="personal.html">Personal</a>
         <a href="projects.html">Projects</a>
         <a href="posters.html">Posters</a>
-        <a href="publications.html" class="active">Publications</a>
+        <a href="" class="active">Publications</a>
         <a href="contact.html"><svg class="icon" viewBox="0 0 24 24">
             <path d="M4 4h16v16H4V4zm8 7L4 6m16 0l-8 5" />
           </svg>Contact</a>
@@ -108,7 +129,7 @@
 
     <div class="bottom-card">
       <div class="bottom-card-content">
-      This page has last been updated on 08-03-2026. <br>For a full overview of papers, see Google Scholar:
+      This page has last been updated on 27-03-2026. <br>For a full overview of papers, see Google Scholar:
       <a href="https://scholar.google.nl/citations?user=ZDXlUhQAAAAJ" class="social-icon" target="_blank">
         <svg viewBox="0 0 640 640">
           <path
@@ -136,11 +157,22 @@
 
 <script>
   const publications = [
+    //2026
+    {
+      title: "Let Me Explain - Knowledge-Based Retrieval Augmented Generation for Agricultural Recommendation Explanations",
+      authors: ["D.Di Scala", "M.De Boer"],
+      simple: "We improve recommendations by combining LLMs' natural explanations with fine-grained matching based on structured knowledge.",
+      complex: "",
+      year: 2026,
+      citations: 0,
+      keywords: ["Trustworthy AI", "Recommender Systems", "Large Language Models", "Retrieval Augmented Generation"],
+      link: "https://link.springer.com/chapter/10.1007/978-3-032-21300-6_8",
+    },
 
   //2025
           {
       title: "Trusting AI is dangerous. Not trusting AI, too.",
-      authors: ["D.Di Scala", "F.Bomhof"],
+      authors: ["F.Bomhof","D.Di Scala"],
       simple: "We discuss three necessary efforts towards trustworthy AI: Laws, Labor, and Literacy.",
       complex: "",
       year: 2025,
@@ -362,11 +394,12 @@
 
       card.innerHTML = ""
 
+      if (pub.keywords.includes("Blog") ){
+        link_text = "Read Blog"}
+      else{
+      link_text = "Read Paper"}
+
       if (pub.image) {
-        if (pub.keywords.includes("Blog") ){
-          link_text = "Read Blog"}
-        else{
-        link_text = "Read Paper"}
 
         card.innerHTML += `
         <div class="pub-image">
