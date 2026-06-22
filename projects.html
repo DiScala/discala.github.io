@@ -27,6 +27,10 @@
   <link rel="stylesheet" href="css/vars.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/projects.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
 
   <!-- Dark Mode Script -->
   <script>
@@ -101,8 +105,170 @@
 
   <main class="page-wrapper">
 
-          <h2>TNO Projects</h2>
+<h2>Current TNO Projects</h2>
+<div id="currentProjects" class="cardsContainer"></div>
 
+<h2>Past TNO Projects</h2>
+<div id="pastProjects" class="cardsContainer"></div>
+
+<script src="js/projects.js"></script>
+
+<script>
+
+const workIcons = {
+  Tool: "fa-wrench",
+  Research: "fa-book",
+    Conference: "fa-microphone"
+};
+
+function createCard(project) {
+  const card = document.createElement("div");
+  card.className = "card";
+
+    // header (image + title)
+  const header = document.createElement("div");
+  header.className = "card-header";
+
+  const title = document.createElement("h3");
+  title.textContent = project.title;
+
+  // image (optional)
+  if (project.image) {
+    const img = document.createElement("img");
+    img.src = project.image;
+    img.alt = project.title;
+    img.className = "card-icon";
+
+    card.appendChild(img);
+  }
+  else{
+  card.appendChild(title);
+  }
+
+
+  card.appendChild(header);
+
+
+  // goal
+  const goal = document.createElement("div");
+  goal.className = "card-section"; 
+  //<div class="label">Project Goal</div>
+  goal.innerHTML = `
+  <div class="goal">${project.goal}</div>`;
+  card.appendChild(goal);
+
+  // video (optional)
+  if (project.video) {
+    const video = document.createElement("div");
+    video.className = "video-container";
+
+    video.innerHTML = `
+      <iframe src="${project.video}"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    `;
+
+    card.appendChild(video);
+  }
+
+  // work
+const work = document.createElement("div");
+work.className = "card-section";
+
+let workHTML =``; //`<div class="label">My Work</div>`;
+
+project.work.forEach((item) => {
+  const type = item[0];
+  const iconClass = workIcons[type] || "fa-circle";
+
+  let content = "";
+
+  // -------------------------
+  // CASE 1: Conference (special)
+  // -------------------------
+  if (type === "Conference") {
+  const data = item[1];
+
+  // CASE 1: multiple conferences
+  if (Array.isArray(data)) {
+    const links = data
+      .map(([label, url]) => {
+        if (url) {
+          return `<a href="${url}" target="_blank" rel="noopener">${label}</a>`;
+        }
+        return label; // no link if empty
+      })
+      .join(", ");
+
+    content = `<span class="bold">Presented</span> at ${links}`;
+  }
+
+  // CASE 2: single conference
+  else {
+    const label = data;
+    const url = item[2];
+
+    if (url) {
+      content = `<span class="bold">Presented</span> at <a href="${url}" target="_blank" rel="noopener">${label}</a>`;
+    } else {
+      content = `<span class="bold">Presented</span> at ${label}`;
+    }
+  }
+}
+
+  // -------------------------
+  // CASE 2: normal items
+  // -------------------------
+  else {
+    const text = item[1];
+    if (type=="Tool"){
+    content = `<span class="bold">Developed</span> `+text;
+    }
+    else if (type=="Research"){
+    content = `<span class="bold">Researched</span> `+text;
+    }
+    else{
+          content = text;
+    }
+
+
+  }
+
+  workHTML += `
+    <div class="work-item">
+      <i class="fa-solid ${iconClass} work-icon"></i>
+      <span>${content}</span>
+    </div>
+  `;
+});
+
+work.innerHTML = workHTML;
+card.appendChild(work);
+
+  return card;
+}
+
+function renderProjects() {
+  const currentContainer = document.getElementById("currentProjects");
+  const pastContainer = document.getElementById("pastProjects");
+
+  projects.forEach(p => {
+    const card = createCard(p);
+
+    if (p.section === "current") {
+      currentContainer.appendChild(card);
+    } else {
+      pastContainer.appendChild(card);
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", renderProjects);
+
+</script>
+<!-- 
 
     <div id="cardsContainer">
 
@@ -231,12 +397,31 @@
           </p>
         </div>
 
-        
+        <div class="card">
+
+  <div class="card-header">
+    <div class="pub-image">
+      <img src="images/projects/llms4eu.png">
+    </div>
+    <h3>LLMs4EU</h3>
+  </div>
+
+  <div class="card-section">
+    <div class="label">Project Goal</div>
+    <div>Preserving Europe's linguistic diversity through accessible, multilingual AI models and tools.</div>
+  </div>
+
+  <div class="card-section">
+    <div class="label">My Work</div>
+    <div><span class="badge">Tool</span>Knowledge-grounded advice to support AI evaluation.</div>
+  </div>
+
+</div>
 
   </div>
 
 
-  </div>
+  </div> -->
 
   </main>
 
