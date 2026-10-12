@@ -88,7 +88,7 @@ select {
 }
 
 .clear-btn {
-  background: #dc3545;
+  background: var(--secondary);
   color: white;
   border: none;
   border-radius: 6px;
@@ -98,7 +98,7 @@ select {
 }
 
 .clear-btn:hover {
-  background: #b52a37;
+  background: var(--secondary-light);
 }
 
 /* === CATEGORY BUTTONS === */

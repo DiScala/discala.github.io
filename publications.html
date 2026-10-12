@@ -140,7 +140,7 @@
 
     <div class="bottom-card">
       <div class="bottom-card-content">
-      This page has last been updated on 22-06-2026. <br>For a full overview of papers, see Google Scholar:
+      This page has last been updated on 12-10-2026. <br>For a full overview of papers, see Google Scholar:
       <a href="https://scholar.google.nl/citations?user=ZDXlUhQAAAAJ" class="social-icon" target="_blank">
         <svg viewBox="0 0 640 640">
           <path
@@ -280,61 +280,61 @@
       else{
       link_text = "Paper"}
 
+      
+
       if (pub.image) {
-        card.innerHTML += `
-       <div class="pub-image">
-          <img src="${pub.image}" alt="${pub.title}">
+  card.innerHTML += `
+    <div class="pub-image">
+      <img src="${pub.image}" alt="${pub.title}">
 
-          <div class="paper-actions">
-            
-            <!-- Cite button -->
-            <button class="paper-btn cite-btn"  onclick="openCiteModal(\`${pub.citationbib}\`)">
-              <svg viewBox="0 0 24 24">
-                <!-- quote / cite icon -->
-                <path d="M7 7h4v4H9v2h2v4H7v-4h2v-2H7V7Zm10 0h-4v4h2v2h-2v4h4v-4h-2v-2h2V7Z"/>
-              </svg>
-              <span>Cite ${link_text}</span>
-            </button>
+      <div class="paper-actions">
 
-            <!-- Read button -->
-            <a href="${pub.link}" target="_blank" class="paper-btn read-btn">
-              <svg viewBox="0 0 24 24">
-                <!-- book icon -->
-                <path d="M19 2H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Zm-1 17H9V4h9v15ZM6 4H5v16h1V4Z"/>
-              </svg>
-              <span>Read ${link_text}</span>
-            </a>
+        ${pub.citationbib ? `
+          <button class="paper-btn cite-btn" onclick="openCiteModal(\`${pub.citationbib}\`)">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 7h4v4H9v2h2v4H7v-4h2v-2H7V7Zm10 0h-4v4h2v2h-2v4h4v-4h-2v-2h2V7Z"/>
+            </svg>
+            <span>Cite ${link_text}</span>
+          </button>
+        ` : ''}
 
-          </div>
-        </div>
-        `;
+        ${pub.link ? `
+          <a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="paper-btn read-btn">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 2H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Zm-1 17H9V4h9v15ZM6 4H5v16h1V4Z"/>
+            </svg>
+            <span>Read ${link_text}</span>
+          </a>
+        ` : ''}
 
-      }
-      else {
-        card.innerHTML += `
-<div class="paper-actions">
-            
-            <!-- Cite button -->
-            <button class="paper-btn cite-btn"  onclick="openCiteModal(\`${pub.citationbib}\`)">
-              <svg viewBox="0 0 24 24">
-                <!-- quote / cite icon -->
-                <path d="M7 7h4v4H9v2h2v4H7v-4h2v-2H7V7Zm10 0h-4v4h2v2h-2v4h4v-4h-2v-2h2V7Z"/>
-              </svg>
-              <span>Cite ${link_text}</span>
-            </button>
+      </div>
+    </div>
+  `;
+} else {
+  card.innerHTML += `
+    <div class="paper-actions">
 
-            <!-- Read button -->
-            <a href="${pub.link}" target="_blank" class="paper-btn read-btn">
-              <svg viewBox="0 0 24 24">
-                <!-- book icon -->
-                <path d="M19 2H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Zm-1 17H9V4h9v15ZM6 4H5v16h1V4Z"/>
-              </svg>
-              <span>Read ${link_text}</span>
-            </a>
+      ${pub.citationbib ? `
+        <button class="paper-btn cite-btn" onclick="openCiteModal(\`${pub.citationbib}\`)">
+          <svg viewBox="0 0 24 24">
+            <path d="M7 7h4v4H9v2h2v4H7v-4h2v-2H7V7Zm10 0h-4v4h2v2h-2v4h4v-4h-2v-2h2V7Z"/>
+          </svg>
+          <span>Cite ${link_text}</span>
+        </button>
+      ` : ''}
 
-          </div>
-        `;
-      }
+      ${pub.link ? `
+        <a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="paper-btn read-btn">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 2H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Zm-1 17H9V4h9v15ZM6 4H5v16h1V4Z"/>
+          </svg>
+          <span>Read ${link_text}</span>
+        </a>
+      ` : ''}
+
+    </div>
+  `;
+}
 
       card.innerHTML += `
           <div class="card-content">

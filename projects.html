@@ -224,10 +224,23 @@ project.work.forEach((item) => {
   else {
     const text = item[1];
     if (type=="Tool"){
+      if (project.section=="current"){
+    content = `<span class="bold">Developing</span> `+text;
+      }
+      else{
     content = `<span class="bold">Developed</span> `+text;
+      }
+
     }
     else if (type=="Research"){
+      if (project.section=="current"){
+    content = `<span class="bold">Researching</span> `+text;
+      }
+      else{
     content = `<span class="bold">Researched</span> `+text;
+      }
+      
+
     }
     else{
           content = text;
@@ -268,161 +281,6 @@ function renderProjects() {
 document.addEventListener("DOMContentLoaded", renderProjects);
 
 </script>
-<!-- 
-
-    <div id="cardsContainer">
-
-      <div class="card">
-        <div class="pub-image">
-          <img src="images/projects/farmbook.png">
-        </div>
-
-        <div class="card-content">
-          <h3>EU-FarmBook</h3>
-        </div>
-        <p class="abstract">
-          <b>Project Goal:</b> An online platform to gather and share agriculture and forestry knowledge.
-        </p>
-
-        <div class="video-container">
-          <iframe src="https://www.youtube-nocookie.com/embed/qO7ERjHYU9I?si=6NJnLtszeW2dR0Aw"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        </div>
-
-        <p class="abstract">
-          <b>My Work:</b> Farm Assistant chatbot, research on knowledge-driven <a href="publications.html?filter=Recommender%20Systems">recommendations</a> by AI chatbots. Presented our work at <a href="posters.html">CLIN (2025)</a>.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="pub-image">
-          <img src="images/projects/trustllm.png">
-        </div>
-
-        <div class="card-content">
-          <h3>TrustLLM</h3>
-        </div>
-        <p class="abstract">
-          <b>Project Goal:</b> Democratising trustworthy and factual large language model technology for Europe.
-        </p>
-
-        <p class="abstract">
-          <b>My Work:</b> BijsluiterBot, research on (multi-step) reasoning capabilities of LLMs, among which structured knowledge <a href="publications.html?filter=Information%20Extraction">extraction</a> from texts.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="pub-image">
-          <img src="images/projects/llms4eu.png">
-        </div>
-        <h3>LLMs4EU</h3>
-        <div>
-          <b>Project Goal:</b> Preserving Europe's linguistic diversity through accessible, multilingual AI models and tools.
-        </div>                      
-        <div>
-          <b>My Work:</b> Knowledge-grounded advice tool to support AI evaluation.
-        </div>
-      </div>
-
-  </div>
-
-
-
-
-      <h2 style="margin-top:20px">Past TNO Projects</h2>
-
-      
-    <div id="cardsContainer">
-
-      <div class="card">
-        <div class="pub-image">
-          <img src="images/projects/quantifarm.png">
-        </div>
-        <h3>QuantiFarm</h3>
-        <div>
-          <b>Project Goal:</b> Assessing and recommendating the impact of digital agriculture technologies for farmers.
-        </div>                      
-        <div>
-          <b>My Work:</b> Knowledge-driven recommender system, validated through scientific publications. Presented our work at SEMANTiCS (2024) and ECIR (2026).
-        </div>
-      </div>
-
-
-
-        <div class="card">
-                  <div class="pub-image">
-          <img src="images/projects/cyclopes.png">
-        </div>
-          <div class="card-content">
-            <h3>CYCLOPES</h3>
-          </div>
-          <p class="abstract">
-            <b>Project Goal:</b> Building an innovation-driven European law enforcement network to combat cybercrime.
-          </p>
-
-          <p class="abstract">
-            <b>My Work:</b> QA tool for reliable, non-sycophantic, certasinty-driven document analysis.
-          </p>
-        </div>
-
-
-
-
-      <div class="card">
-        <div class="card-content">
-          <h3>Norm Engineering</h3>
-        </div>
-        <p class="abstract">
-          <b>Project Goal:</b> Transforming legal complex rules to explainable structured interpretations.
-        </p>
-
-        <p class="abstract">
-          <b>My Work:</b> Research on structured interpretations for legal question answering. Presented our work at <a href="posters.html">CLIN (2025)</a>.
-        </p>
-      </div>
-
-
-        <div class="card">
-          <div class="card-content">
-            <h3>DEFRAUDify</h3>
-          </div>
-          <p class="abstract">
-            <b>Project Goal:</b> Developing a toolset to improve cybersecurity for businesses.
-          </p>
-
-          <p class="abstract">
-            <b>My Work:</b> NLP tool to deduplicate text documents by knowledge-based person disambiguation.
-          </p>
-        </div>
-
-        <div class="card">
-
-  <div class="card-header">
-    <div class="pub-image">
-      <img src="images/projects/llms4eu.png">
-    </div>
-    <h3>LLMs4EU</h3>
-  </div>
-
-  <div class="card-section">
-    <div class="label">Project Goal</div>
-    <div>Preserving Europe's linguistic diversity through accessible, multilingual AI models and tools.</div>
-  </div>
-
-  <div class="card-section">
-    <div class="label">My Work</div>
-    <div><span class="badge">Tool</span>Knowledge-grounded advice to support AI evaluation.</div>
-  </div>
-
-</div>
-
-  </div>
-
-
-  </div> -->
-
   </main>
 
   <footer class="footer">

@@ -20,8 +20,8 @@
 /* COLUMN 1: PROFILE ------------------------------------------ */
 
 .lc-profile img {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   object-fit: cover;
   border-radius: 16px;
 }
@@ -45,21 +45,32 @@
 
 .lc-name {
   margin: 0;
-  font-size: 28px;
-  letter-spacing: .3px;
+  font-family: 'Lora', serif;
+  font-size: clamp(2rem, 2vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  color: var(--primary);
 }
 
+/* Subtitle */
 .lc-subtitle {
-    margin:0;
-    font-size: 20px;
-    letter-spacing: .2px;
+  margin: 0px 0 8px;
+  font-family: 'Source Sans 3', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+    line-height: 1.4;
+  color: var(--secondary);
 }
 
-
+/* Intro paragraph */
 .lc-main p {
-  margin: 0;
-  font-size: 15px;
-  color:var(--text-muted);
+  margin: 4px 0 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 620px;
 }
 
 .lc-main a {
@@ -71,7 +82,7 @@
 
 .lc-divider {
   width: 2px;
-  height: 120px;
+  height: 130px;
   background: var(--secondary);
   margin: 0 6px;
 }
@@ -243,8 +254,13 @@ fill: var(--secondary-light);
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  /* font-weight: 600;
+  letter-spacing: 0.05em; */
+
+    font-family: 'Source Sans 3', serif;
+  font-size: 1.25rem;
+  font-weight: 1000;
+  letter-spacing: 0.015em;
   /*box-shadow: 0 8px 25px rgba(0,0,0,0.15);*/
 }
 

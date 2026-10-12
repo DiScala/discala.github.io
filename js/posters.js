@@ -2,6 +2,18 @@ const posters = [
 
     // ===== 2026 =====
 
+
+        {
+        year: 2026,
+        id: "clin2026",
+        image: "images/posters/CLIN Poster.png",
+        conference: "CLIN 2026",
+        authors: "<b>D.Di Scala</b>, R.Bakker, C.Meijer, M.De Boer",
+        takeaway:
+            "We introduce a trustworthy retrieval agent for medical leaflets. Part of the TrustLLM project.",
+        paperText: "Paper",
+        paperLink:  null
+    },
     {
         year: 2026,
         id: "hhai2026",
@@ -9,8 +21,8 @@ const posters = [
         conference: "HHAI 2026",
         authors: "<b>D.Di Scala</b>, M.De Boer",
         takeaway:
-            "We introduce a method for evaluating trustworthiness of AI advice.",
-        paperText: "Corresponding Paper",
+            "We introduce a method for evaluating trustworthiness of AI advice. Part of the EU-FarmBook project.",
+        paperText: "Paper",
         paperLink: "publications.html?id=Harvesting"
     },
 
@@ -25,8 +37,8 @@ const posters = [
         authors: "<b>D.Di Scala</b>, D.Vos, EU-FarmBook TNO Team",
         takeaway:
             "We study how knowledge-driven RAG can improve trustworthiness of agricultural AI advice. Part of the EU-FarmBook project.",
-        paperText: "Corresponding Paper (WIP)",
-        paperLink: null
+        paperText: "Paper",
+        paperLink: "publications.html?id=Harvesting"
     },
 
     {
@@ -37,8 +49,8 @@ const posters = [
         authors: "<b>D.Di Scala</b>, R.Bakker, R.Van Drie, M.De Boer",
         takeaway:
             "We study how knowledge-driven RAG can improve trustworthiness of legal AI advice. Part of the Norm Engineering project.",
-        paperText: "Corresponding Paper (WIP)",
-        paperLink: null
+        paperText: "Paper",
+        paperLink: "publications.html?id=QuALA"
     },
 
     {
@@ -49,7 +61,7 @@ const posters = [
         authors: "<b>D.Di Scala</b>, M.De Boer, P.Yolum",
         takeaway:
             "We introduce an uncertainty-driven RAG (CERTA) and show how it answers more appropriately on QA tasks, answering 'I don't know' more often in the right moments.",
-        paperText: "Corresponding Paper",
+        paperText: "Paper",
         paperLink: "publications.html?id=Towards%20Appropriate%20Trust"
     },
 
@@ -61,7 +73,7 @@ const posters = [
         authors: "<b>D.Di Scala</b>, S.Lathouwers, M.Van Bekkum",
         takeaway:
             "We propose that the gap between functional and normative Trustworthy AI should be bridged with a descriptive framework.",
-        paperText: "Corresponding Paper",
+        paperText: "Paper",
         paperLink: "publications.html?id=Bridging"
     },
 
@@ -76,18 +88,7 @@ const posters = [
         authors: "<b>D.Di Scala</b>, P.Yolum",
         takeaway:
             "We introduce PACCART, a framework for privacy protection through multi-agent argumentation.",
-        paperText: "Corresponding Paper",
-        paperLink: "publications.html?id=PACCART"
-    },
-        {
-        year: 2023,
-        id: "aamas2023",
-        image: "images/posters/AAMAS Poster.png",
-        conference: "AAMAS 2023",
-        authors: "<b>D.Di Scala</b>, P.Yolum",
-        takeaway:
-            "We introduce PACCART, a framework for privacy protection through multi-agent argumentation.",
-        paperText: "Corresponding Paper",
+        paperText: "Paper",
         paperLink: "publications.html?id=PACCART"
     }
 

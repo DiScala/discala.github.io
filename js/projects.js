@@ -7,7 +7,7 @@ const projects = [
     goal: "An online platform to gather and share agriculture and forestry knowledge",
      work: [ ["Tool", "the Farm Assistant chatbot"],
         ["Research", `knowledge-driven conversational <a href=publications.html?filter=Recommender%20Systems target="_blank">recommender systems</a>`],
-        ["Conference", [["CLIN 2024", "posters.html"],["CLIN 2025", "posters.html"], ["USCKI 2026", "https://www.linkedin.com/posts/uscki-incognito_on-april-29-daan-di-scala-gave-a-caf%C3%A9-ki-ugcPost-7462460327822106624-38YO"], ["HHAI 2026", ""]]]
+        ["Conference", [["CLIN 2024", "posters.html"],["RecSys 2024",""],["CLIN 2025", "posters.html"], ["USCKI 2026", "https://www.linkedin.com/posts/uscki-incognito_on-april-29-daan-di-scala-gave-a-caf%C3%A9-ki-ugcPost-7462460327822106624-38YO"], ["HHAI 2026", "posters.html"]]]
     ],
     video: "https://www.youtube-nocookie.com/embed/qO7ERjHYU9I?si=6NJnLtszeW2dR0Aw"
   },
@@ -18,9 +18,9 @@ const projects = [
     image: "images/projects/trustllm2.png",
     goal: "Democratising trustworthy and factual large language model technology for Europe",
     work: [ 
-      ["Tool", "BijsluiterBot"], 
-      ["Research", "multi-step reasoning, structured knowledge extraction"],
-      ["Conference", [["ESWC 2024", "https://sites.google.com/view/genesy2024/"], ["NVFG 2026", "https://www.nvfg.nl/evenement/nvfg-regned-ai-in-de-farma/"]]]
+      ["Tool", "BijsluiterBot, a medical leaflet information retrieval system"], 
+      ["Research", "multi-step reasoning, structured knowledge extraction", "structured information retrieval"],
+      ["Conference", [["ESWC 2024", "https://sites.google.com/view/genesy2024/"], ["NVFG 2026", "https://www.nvfg.nl/evenement/nvfg-regned-ai-in-de-farma/"], ["CLIN 2026", "posters.html"]]]
     ]
   },
 
@@ -49,7 +49,11 @@ const projects = [
     title: "CYCLOPES",
     image: "images/projects/cyclopes.png",
     goal: "Building an innovation-driven European law enforcement network to combat cybercrime",
-    work: [ ["Tool", "a QA tool for reliable, certainty-driven document analysis"]]
+    work: [ 
+      ["Tool", "a QA tool for reliable, certainty-driven document analysis"],
+        ["Conference", [["ECAI 2025", "posters.html"]]
+    ]
+    ],
   },
 
   {

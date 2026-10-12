@@ -6,21 +6,20 @@
       authors: ["D.Di Scala", "M.De Boer"],
       simple: "",
       complex: "",
-      year: 2026,
+      year: 2026, 
       citations: 0,
       keywords: ["Trustworthy AI", "LLMs", "RAG", "Evaluation"],
-      link: "",
+      link: "https://journals.sagepub.com/doi/pdf/10.3233/FAIA260518",
+            image: "images/papers/hhai26.png",
       citationbib: 
-      `@article{TBD,
-        author = {TBD TBD},
-        title = {TBD},
-        journal = {TBD},
-        year = {2026},
-        volume = {TBD},
-        number = {TBD},
-        pages = {TBD},
-        doi = {TBD}
-      }`
+`@incollection{di2026harvesting,
+  title={Harvesting Trust Indicators: A Method for Evaluating Trustworthiness of RAG-Driven Advice},
+  author={Di Scala, Daan L and De Boer, Maaike HT},
+  booktitle={HHAI 2026},
+  pages={315--329},
+  year={2026},
+  publisher={IOS Press}
+}`
     },
         {
       title: "QuALA-NL: Question & Answer with Legal Attribution in Dutch",
@@ -28,20 +27,19 @@
       simple: "",
       complex: "",
       year: 2026,
-      citations: 0,
+      citations: 1,
       keywords: ["RAG"],
-      link: "",
+      link: "https://aclanthology.org/2026.lrec-1.49.pdf",
       citationbib: 
-      `@article{TBD,
-        author = {TBD TBD},
-        title = {TBD},
-        journal = {TBD},
-        year = {2026},
-        volume = {TBD},
-        number = {TBD},
-        pages = {TBD},
-        doi = {TBD}
-      }`
+`@inproceedings{van2026quala,
+  title={QuALA-NL: Question \& Answer with Legal Attribution in Dutch},
+  author={van Drie, Romy AN and Bakker, Roos M and Di Scala, Daan L and de Boer, Maaike HT},
+  booktitle={Proceedings of the Fifteenth Language Resources and Evaluation Conference (LREC 2026)},
+  volume={11},
+  number={16},
+  pages={674--684},
+  year={2026}
+}`
     },
     {
       title: "Let Me Explain - Knowledge-Based RAG for Agricultural Recommendation Explanations",
@@ -52,6 +50,7 @@
       citations: 0,
       keywords: ["Trustworthy AI", "Recommender Systems", "LLMs", "RAG"],
       link: "https://link.springer.com/chapter/10.1007/978-3-032-21300-6_8",
+            image: "images/papers/ecir26.png",
       citationbib: 
 `@inproceedings{di2026let,
   title={Let Me Explain-Knowledge-Based Retrieval Augmented Generation for Agricultural Recommendation Explanations},
@@ -93,17 +92,6 @@
       keywords: ["Trustworthy AI", "LLMs", "RAG"],
       link: "https://www.sciencedirect.com/science/article/pii/S0885230824000792",
       image: "images/papers/certa.png",
-      citationbib: 
-      `@article{TBD,
-        author = {TBD TBD},
-        title = {TBD},
-        journal = {TBD},
-        year = {2026},
-        volume = {TBD},
-        number = {TBD},
-        pages = {TBD},
-        doi = {TBD}
-      }`
     },
     {
       title: "Bridging the AI Trustworthiness Gap between Functions and Norms",

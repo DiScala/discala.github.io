@@ -142,7 +142,11 @@
 
 <script src="js/posters.js"></script>
 
-<script>const container = document.getElementById("poster-container");
+<script>
+
+
+
+const container = document.getElementById("poster-container");
 
 // sort newest first
 posters.sort((a, b) => b.year - a.year);
@@ -150,19 +154,6 @@ posters.sort((a, b) => b.year - a.year);
 let currentYear = null;
 
 posters.forEach(poster => {
-
-    // // add year heading
-    // if (poster.year !== currentYear) {
-
-    //     currentYear = poster.year;
-
-    //     container.insertAdjacentHTML(
-    //         "beforeend",
-    //         `
-    //         <h2 class="year-heading">${currentYear}</h2>
-    //         `
-    //     );
-    // }
 
     const paperSection = poster.paperLink
         ? `<a href="${poster.paperLink}">${poster.paperText}</a>`
@@ -194,7 +185,7 @@ posters.forEach(poster => {
         </div>
 
         <p>
-            <b>Take-away:</b>
+
             ${poster.takeaway}
         </p>
 
@@ -229,6 +220,10 @@ posters.forEach(poster => {
 
 
 <script>
+
+
+
+
   const modal = document.getElementById("posterModal");
   const modalImg = document.getElementById("modalImage");
   const closeBtn = document.querySelector(".close-btn");
@@ -236,10 +231,12 @@ posters.forEach(poster => {
   let activeClone = null;
   let startRect = null;
   let endRect = null;
+    let originalImg = null;
 
   document.querySelectorAll(".poster-img").forEach(button => {
     button.addEventListener("click", () => {
       const img = button;
+      originalImg = img;
       startRect = img.getBoundingClientRect();
 
       // Prepare modal invisibly
@@ -282,28 +279,54 @@ posters.forEach(poster => {
     });
   });
 
-  function closeModal() {
-    if (!activeClone) {
-      modal.style.display = "none";
-      return;
-    }
+function closeModal() {
+  if (!activeClone || !originalImg) {
+    modal.style.display = "none";
+    return;
+  }
 
-    modalImg.style.visibility = "hidden";
+  // Get the original image's current position and exact size
+  const rect = originalImg.getBoundingClientRect();
 
-    activeClone.style.opacity = "1";
-    activeClone.style.top = startRect.top + "px";
-    activeClone.style.left = startRect.left + "px";
-    activeClone.style.width = startRect.width + "px";
-    activeClone.style.height = startRect.height + "px";
+  // Hide the modal image while the clone animates back
+  modalImg.style.visibility = "hidden";
 
-    modal.style.opacity = "0";
+  // Ensure the clone starts from its current modal position
+  activeClone.style.transition = "none";
+  activeClone.style.opacity = "1";
 
-    setTimeout(() => {
-      modal.style.display = "none";
+  // Force layout so the browser applies the transition reset
+  activeClone.getBoundingClientRect();
+
+  // Animate to the original image's exact dimensions
+  activeClone.style.transition =
+    "all 0.45s cubic-bezier(0.4, 0, 0.2, 1)";
+
+  activeClone.style.top = rect.top + "px";
+  activeClone.style.left = rect.left + "px";
+  activeClone.style.width = rect.width + "px";
+  activeClone.style.height = rect.height + "px";
+
+  modal.style.opacity = "0";
+
+  setTimeout(() => {
+    modal.style.display = "none";
+    modalImg.style.visibility = "visible";
+
+    if (activeClone) {
       activeClone.remove();
       activeClone = null;
-    }, 450);
-  }
+    }
+
+    originalImg = null;
+  }, 450);
+}
+
+
+
+
+
+
 
   closeBtn.addEventListener("click", closeModal);
 

@@ -150,11 +150,11 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .card p a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* === OPTIONAL: IMAGE FALLBACK (if you ever use bigger images again) === */
